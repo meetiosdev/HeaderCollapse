@@ -6,17 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0F2AA4E22DE1CA3400A813BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AA4DC2DE1CA3400A813BE /* Preview Assets.xcassets */; };
+		0F2AA4E32DE1CA3400A813BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F2AA4DE2DE1CA3400A813BE /* Assets.xcassets */; };
+		0F2AA4E52DE1CA3400A813BE /* HeaderCollapseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AA4E02DE1CA3400A813BE /* HeaderCollapseApp.swift */; };
+		0F2AA4F02DE1CA5A00A813BE /* FeedPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AA4EC2DE1CA5A00A813BE /* FeedPostsView.swift */; };
+		0F2AA4F12DE1CA5A00A813BE /* CommunityTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AA4E62DE1CA5A00A813BE /* CommunityTabItemView.swift */; };
+		0F2AA4F22DE1CA5A00A813BE /* MelpotFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AA4ED2DE1CA5A00A813BE /* MelpotFeedView.swift */; };
+		0F2AA4F32DE1CA5A00A813BE /* FeedNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AA4EB2DE1CA5A00A813BE /* FeedNavigationBar.swift */; };
+		0F2AA4F42DE1CA5A00A813BE /* CommunityTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AA4E72DE1CA5A00A813BE /* CommunityTabsView.swift */; };
+		0F2AA4F52DE1CA5A00A813BE /* ResizableHeaderScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2AA4E92DE1CA5A00A813BE /* ResizableHeaderScrollView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		0F2AA4CB2DE1CA2A00A813BE /* HeaderCollapse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeaderCollapse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F2AA4DC2DE1CA3400A813BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0F2AA4DE2DE1CA3400A813BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F2AA4E02DE1CA3400A813BE /* HeaderCollapseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollapseApp.swift; sourceTree = "<group>"; };
+		0F2AA4E62DE1CA5A00A813BE /* CommunityTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTabItemView.swift; sourceTree = "<group>"; };
+		0F2AA4E72DE1CA5A00A813BE /* CommunityTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTabsView.swift; sourceTree = "<group>"; };
+		0F2AA4E92DE1CA5A00A813BE /* ResizableHeaderScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableHeaderScrollView.swift; sourceTree = "<group>"; };
+		0F2AA4EB2DE1CA5A00A813BE /* FeedNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedNavigationBar.swift; sourceTree = "<group>"; };
+		0F2AA4EC2DE1CA5A00A813BE /* FeedPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostsView.swift; sourceTree = "<group>"; };
+		0F2AA4ED2DE1CA5A00A813BE /* MelpotFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelpotFeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		0F2AA4CD2DE1CA2A00A813BE /* HeaderCollapse */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = HeaderCollapse;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0F2AA4C82DE1CA2A00A813BE /* Frameworks */ = {
@@ -32,7 +45,7 @@
 		0F2AA4C22DE1CA2A00A813BE = {
 			isa = PBXGroup;
 			children = (
-				0F2AA4CD2DE1CA2A00A813BE /* HeaderCollapse */,
+				0F2AA4E12DE1CA3400A813BE /* HeaderCollapse */,
 				0F2AA4CC2DE1CA2A00A813BE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +56,62 @@
 				0F2AA4CB2DE1CA2A00A813BE /* HeaderCollapse.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0F2AA4DD2DE1CA3400A813BE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AA4DC2DE1CA3400A813BE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0F2AA4E12DE1CA3400A813BE /* HeaderCollapse */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AA4DD2DE1CA3400A813BE /* Preview Content */,
+				0F2AA4DE2DE1CA3400A813BE /* Assets.xcassets */,
+				0F2AA4E02DE1CA3400A813BE /* HeaderCollapseApp.swift */,
+				0F2AA4EF2DE1CA5A00A813BE /* Views */,
+			);
+			path = HeaderCollapse;
+			sourceTree = "<group>";
+		};
+		0F2AA4E82DE1CA5A00A813BE /* CommunityHeader */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AA4E62DE1CA5A00A813BE /* CommunityTabItemView.swift */,
+				0F2AA4E72DE1CA5A00A813BE /* CommunityTabsView.swift */,
+			);
+			path = CommunityHeader;
+			sourceTree = "<group>";
+		};
+		0F2AA4EA2DE1CA5A00A813BE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AA4E92DE1CA5A00A813BE /* ResizableHeaderScrollView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0F2AA4EE2DE1CA5A00A813BE /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AA4EB2DE1CA5A00A813BE /* FeedNavigationBar.swift */,
+				0F2AA4EC2DE1CA5A00A813BE /* FeedPostsView.swift */,
+				0F2AA4ED2DE1CA5A00A813BE /* MelpotFeedView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		0F2AA4EF2DE1CA5A00A813BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F2AA4E82DE1CA5A00A813BE /* CommunityHeader */,
+				0F2AA4EA2DE1CA5A00A813BE /* Components */,
+				0F2AA4EE2DE1CA5A00A813BE /* Feed */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +128,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				0F2AA4CD2DE1CA2A00A813BE /* HeaderCollapse */,
 			);
 			name = HeaderCollapse;
 			packageProductDependencies = (
@@ -109,6 +175,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F2AA4E22DE1CA3400A813BE /* Preview Assets.xcassets in Resources */,
+				0F2AA4E32DE1CA3400A813BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +187,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F2AA4E52DE1CA3400A813BE /* HeaderCollapseApp.swift in Sources */,
+				0F2AA4F02DE1CA5A00A813BE /* FeedPostsView.swift in Sources */,
+				0F2AA4F12DE1CA5A00A813BE /* CommunityTabItemView.swift in Sources */,
+				0F2AA4F22DE1CA5A00A813BE /* MelpotFeedView.swift in Sources */,
+				0F2AA4F32DE1CA5A00A813BE /* FeedNavigationBar.swift in Sources */,
+				0F2AA4F42DE1CA5A00A813BE /* CommunityTabsView.swift in Sources */,
+				0F2AA4F52DE1CA5A00A813BE /* ResizableHeaderScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

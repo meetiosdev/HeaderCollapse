@@ -11,7 +11,7 @@ import SwiftUI
 struct HeaderCollapseApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MelpotFeedView()
         }
     }
 }
