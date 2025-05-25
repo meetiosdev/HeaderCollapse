@@ -1,0 +1,29 @@
+{
+  "title": "community-page-8",
+  "page_number": 8,
+  "page_size": 20,
+  "total_record_count": 1000,
+  "next_page": "https://static.staticsave.com/melpot/community-page-9.json",
+  "records": [
+    {"id": 141, "name": "Collectibles"},
+    {"id": 142, "name": "ActionFigures"},
+    {"id": 143, "name": "VinylRecords"},
+    {"id": 144, "name": "CoinCollecting"},
+    {"id": 145, "name": "StampCollecting"},
+    {"id": 146, "name": "Antiques"},
+    {"id": 147, "name": "VintageFashion"},
+    {"id": 148, "name": "Sneakers"},
+    {"id": 149, "name": "Watches"},
+    {"id": 150, "name": "EDC"},
+    {"id": 151, "name": "FountainPens"},
+    {"id": 152, "name": "MechanicalKeyboards"},
+    {"id": 153, "name": "Flashlights"},
+    {"id": 154, "name": "Multitools"},
+    {"id": 155, "name": "Drones"},
+    {"id": 156, "name": "RCModels"},
+    {"id": 157, "name": "ModelTrains"},
+    {"id": 158, "name": "Gunpla"},
+    {"id": 159, "name": "MiniPainting"},
+    {"id": 160, "name": "Puzzles"}
+  ]
+}

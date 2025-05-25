@@ -1,0 +1,29 @@
+{
+  "title": "community-page-2",
+  "page_number": 2,
+  "page_size": 20,
+  "total_record_count": 1000,
+  "next_page": "https://static.staticsave.com/melpot/community-page-3.json",
+  "records": [
+    {"id": 21, "name": "food"},
+    {"id": 22, "name": "Art"},
+    {"id": 23, "name": "dataisbeautiful"},
+    {"id": 24, "name": "gadgets"},
+    {"id": 25, "name": "Fitness"},
+    {"id": 26, "name": "history"},
+    {"id": 27, "name": "photoshopbattles"},
+    {"id": 28, "name": "Futurology"},
+    {"id": 29, "name": "explainlikeimfive"},
+    {"id": 30, "name": "sports"},
+    {"id": 31, "name": "television"},
+    {"id": 32, "name": "WritingPrompts"},
+    {"id": 33, "name": "personalfinance"},
+    {"id": 34, "name": "nosleep"},
+    {"id": 35, "name": "philosophy"},
+    {"id": 36, "name": "InternetIsBeautiful"},
+    {"id": 37, "name": "GetMotivated"},
+    {"id": 38, "name": "UpliftingNews"},
+    {"id": 39, "name": "Music"},
+    {"id": 40, "name": "Jokes"}
+  ]
+}

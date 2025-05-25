@@ -36,7 +36,7 @@ struct FeedNavigationBar: View {
             }
         }
         .overlay {
-            Image(.logoLarge)
+            Image(.logoSwift)
                 .resizable()
                 .frame(width: 32, height: 32)
         }

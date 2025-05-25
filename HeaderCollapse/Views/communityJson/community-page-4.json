@@ -1,0 +1,29 @@
+{
+  "title": "community-page-4",
+  "page_number": 4,
+  "page_size": 20,
+  "total_record_count": 1000,
+  "next_page": "https://static.staticsave.com/melpot/community-page-5.json",
+  "records": [
+    {"id": 61, "name": "IndieGames"},
+    {"id": 62, "name": "BoardGames"},
+    {"id": 63, "name": "Anime"},
+    {"id": 64, "name": "Manga"},
+    {"id": 65, "name": "Cosplay"},
+    {"id": 66, "name": "Fantasy"},
+    {"id": 67, "name": "SciFi"},
+    {"id": 68, "name": "ComicBooks"},
+    {"id": 69, "name": "TabletopRPG"},
+    {"id": 70, "name": "LEGO"},
+    {"id": 71, "name": "Woodworking"},
+    {"id": 72, "name": "HomeImprovement"},
+    {"id": 73, "name": "Gardening"},
+    {"id": 74, "name": "Baking"},
+    {"id": 75, "name": "Coffee"},
+    {"id": 76, "name": "Wine"},
+    {"id": 77, "name": "CraftBeer"},
+    {"id": 78, "name": "Cocktails"},
+    {"id": 79, "name": "BBQ"},
+    {"id": 80, "name": "Vegan"}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "community-page-6",
+  "page_number": 6,
+  "page_size": 20,
+  "total_record_count": 1000,
+  "next_page": "https://static.staticsave.com/melpot/community-page-7.json",
+  "records": [
+    {"id": 101, "name": "ClassicCars"},
+    {"id": 102, "name": "ElectricVehicles"},
+    {"id": 103, "name": "Motorcycles"},
+    {"id": 104, "name": "Aviation"},
+    {"id": 105, "name": "Sailing"},
+    {"id": 106, "name": "Trains"},
+    {"id": 107, "name": "Amtrak"},
+    {"id": 108, "name": "UrbanExploration"},
+    {"id": 109, "name": "Archaeology"},
+    {"id": 110, "name": "Anthropology"},
+    {"id": 111, "name": "Paleontology"},
+    {"id": 112, "name": "Genealogy"},
+    {"id": 113, "name": "TrueCrime"},
+    {"id": 114, "name": "UnresolvedMysteries"},
+    {"id": 115, "name": "Paranormal"},
+    {"id": 116, "name": "UFOs"},
+    {"id": 117, "name": "Conspiracy"},
+    {"id": 118, "name": "Preppers"},
+    {"id": 119, "name": "Homesteading"},
+    {"id": 120, "name": "Permaculture"}
+  ]
+}

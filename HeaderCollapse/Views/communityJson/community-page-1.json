@@ -1,0 +1,29 @@
+{
+  "title": "community-page-1",
+  "page_number": 1,
+  "page_size": 20,
+  "total_record_count": 1000,
+  "next_page": "https://static.staticsave.com/melpot/community-page-2.json",
+  "records": [
+    {"id": 1, "name": "AskReddit"},
+    {"id": 2, "name": "worldnews"},
+    {"id": 3, "name": "funny"},
+    {"id": 4, "name": "gaming"},
+    {"id": 5, "name": "aww"},
+    {"id": 6, "name": "pics"},
+    {"id": 7, "name": "science"},
+    {"id": 8, "name": "todayilearned"},
+    {"id": 9, "name": "movies"},
+    {"id": 10, "name": "news"},
+    {"id": 11, "name": "Showerthoughts"},
+    {"id": 12, "name": "askscience"},
+    {"id": 13, "name": "IAmA"},
+    {"id": 14, "name": "technology"},
+    {"id": 15, "name": "LifeProTips"},
+    {"id": 16, "name": "DIY"},
+    {"id": 17, "name": "space"},
+    {"id": 18, "name": "nottheonion"},
+    {"id": 19, "name": "Documentaries"},
+    {"id": 20, "name": "books"}
+  ]
+}

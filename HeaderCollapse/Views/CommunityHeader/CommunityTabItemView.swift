@@ -5,43 +5,53 @@
 //  Created by Swarajmeet Singh on 24/05/25.
 //
 
-
 import SwiftUI
 
-/// A reusable view representing a single community tab item with animated selection.
+/// A reusable view that displays a single tab item for a community with selection animation.
 struct CommunityTabItemView: View {
 
-    // MARK: - Public Properties
+    // MARK: - Properties
 
-    let name: String
-    @Binding var selectedCommunity: String
+    /// The community represented by this tab.
+    let community: Community
+
+    /// The currently selected community (bound).
+    @Binding var selectedCommunity: Community
+
+    /// Color used for the underline indicator when the tab is active.
     let activeHighlightColor: Color
+
+    /// Shared namespace for matched geometry effect (used for animation).
     let animationNamespace: Namespace.ID
-    let onSelect: (String) -> Void
 
-    // MARK: - Private Computed Properties
+    /// Callback triggered when the tab is selected.
+    let onSelect: (Community) -> Void
 
+    // MARK: - Computed Properties
+
+    /// Indicates whether this tab is the active/selected one.
     private var isActive: Bool {
-        selectedCommunity == name
+        selectedCommunity.id == community.id
     }
 
-    // MARK: - Init with Defaults
+    // MARK: - Initializer
 
-    /// Initializes a new `CommunityTabItemView`.
+    /// Initializes the community tab item view.
+    ///
     /// - Parameters:
-    ///   - name: The name of the community.
-    ///   - selectedCommunity: A binding to the selected community name.
-    ///   - activeHighlightColor: The color used to indicate the selected tab. Defaults to `.purple`.
-    ///   - animationNamespace: The matched geometry animation namespace.
-    ///   - onSelect: A callback triggered when the tab is selected. Defaults to a no-op.
+    ///   - community: The community to display.
+    ///   - selectedCommunity: A binding to the currently selected community.
+    ///   - activeHighlightColor: The color of the active underline. Defaults to `.purple`.
+    ///   - animationNamespace: A matched geometry namespace for animating transitions.
+    ///   - onSelect: A closure executed when this tab is selected.
     init(
-        name: String,
-        selectedCommunity: Binding<String>,
+        community: Community,
+        selectedCommunity: Binding<Community>,
         activeHighlightColor: Color = .purple,
         animationNamespace: Namespace.ID,
-        onSelect: @escaping (String) -> Void = { _ in }
+        onSelect: @escaping (Community) -> Void = { _ in }
     ) {
-        self.name = name
+        self.community = community
         self._selectedCommunity = selectedCommunity
         self.activeHighlightColor = activeHighlightColor
         self.animationNamespace = animationNamespace
@@ -59,18 +69,20 @@ struct CommunityTabItemView: View {
         .overlay(alignment: .bottom) {
             activeUnderline
         }
-        .contentShape(.rect)
+        .contentShape(.rect) // Ensures full tappable area
         .onTapGesture(perform: handleSelection)
     }
 
     // MARK: - Subviews
 
+    /// The text view displaying the community name.
     private var communityNameText: some View {
-        Text(name.capitalized)
+        Text(community.name.capitalized)
             .font(.system(size: 16, weight: .semibold))
             .foregroundStyle(isActive ? .white : .gray)
     }
 
+    /// The underline that appears when the tab is selected.
     @ViewBuilder
     private var activeUnderline: some View {
         if isActive {
@@ -83,25 +95,28 @@ struct CommunityTabItemView: View {
 
     // MARK: - Actions
 
+    /// Handles the selection of the tab.
     private func handleSelection() {
-        guard selectedCommunity != name else { return }
+        guard !isActive else { return }
         withAnimation(.snappy) {
-            selectedCommunity = name
-            onSelect(name)
+            selectedCommunity = community
+            onSelect(community)
         }
     }
 }
 
+// MARK: - Preview
+
 #Preview {
     struct CommunityTabItemPreview: View {
-        @State private var selectedCommunity = "gaming"
+        @State private var selectedCommunity: Community = .init(id: 0, name: "gaming")
         @Namespace private var animation
 
         var body: some View {
             CommunityTabItemView(
-                name: "gaming",
+                community: .init(id: 0, name: "gaming"),
                 selectedCommunity: $selectedCommunity,
-                activeHighlightColor: .blue,
+                activeHighlightColor: .purple,
                 animationNamespace: animation
             ) { selected in
                 print("Selected community:", selected)

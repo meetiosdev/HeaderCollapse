@@ -1,0 +1,29 @@
+{
+  "title": "community-page-7",
+  "page_number": 7,
+  "page_size": 20,
+  "total_record_count": 1000,
+  "next_page": "https://static.staticsave.com/melpot/community-page-8.json",
+  "records": [
+    {"id": 121, "name": "Knitting"},
+    {"id": 122, "name": "Crochet"},
+    {"id": 123, "name": "Embroidery"},
+    {"id": 124, "name": "Pottery"},
+    {"id": 125, "name": "Glassblowing"},
+    {"id": 126, "name": "Blacksmithing"},
+    {"id": 127, "name": "Leathercraft"},
+    {"id": 128, "name": "Calligraphy"},
+    {"id": 129, "name": "Origami"},
+    {"id": 130, "name": "Photography"},
+    {"id": 131, "name": "Filmmaking"},
+    {"id": 132, "name": "Animation"},
+    {"id": 133, "name": "Podcasting"},
+    {"id": 134, "name": "VoiceActing"},
+    {"id": 135, "name": "StandupComedy"},
+    {"id": 136, "name": "Magic"},
+    {"id": 137, "name": "CircusArts"},
+    {"id": 138, "name": "Parkour"},
+    {"id": 139, "name": "Juggling"},
+    {"id": 140, "name": "EscapeRooms"}
+  ]
+}
