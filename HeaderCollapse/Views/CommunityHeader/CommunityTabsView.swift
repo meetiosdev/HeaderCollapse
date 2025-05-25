@@ -38,7 +38,7 @@ struct CommunityTabsView: View {
                         .id(community.id) // Enables scroll-to-selected
                         .onAppear {
                             Task {
-                                await viewModel.loadMoreIfNeeded(currentItem: community)
+                                await viewModel.loadMoreIfNeeded(near: community)
                             }
                         }
                     }

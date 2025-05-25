@@ -34,63 +34,85 @@ struct CommunityResponse: Decodable {
 }
 
 
-// MARK: - ViewModel
+// MARK: - CommunityViewModel
 
-/// ViewModel responsible for managing community data.
+/// `CommunityViewModel` manages the loading and pagination of community data.
+/// It exposes observable properties to allow SwiftUI views to reactively update.
 @MainActor
 final class CommunityViewModel: ObservableObject {
-    @Published var communities: [Community] = []
-    @Published var isLoading: Bool = false
+
+    // MARK: - Published Properties
+
+    /// The list of communities fetched from the service.
+    @Published private(set) var communities: [Community] = []
+
+    /// Indicates whether the view model is currently loading data.
+    @Published private(set) var isLoading: Bool = false
+
+    /// The currently selected community.
     @Published var selectedCommunity: Community?
 
-    private var currentPage: Int = 1
-    private var canLoadMore: Bool = true
-    private let communityService: CommunityServiceProtocol
+    // MARK: - Private Properties
 
-    /// Initializes the view model with a community service.
-    init(communityService: CommunityServiceProtocol = CommunityService()) {
-        self.communityService = communityService
+    private var currentPage: Int = 1
+    private var canLoadMorePages: Bool = true
+    private let service: CommunityServiceProtocol
+
+    // MARK: - Initialization
+
+    /// Initializes the view model with an injected community service.
+    /// - Parameter service: A type conforming to `CommunityServiceProtocol`. Defaults to `CommunityService()`.
+    init(service: CommunityServiceProtocol = CommunityService()) {
+        self.service = service
     }
 
-    /// Loads the first page of community data.
+    // MARK: - Data Loading
+
+    /// Loads the initial set of communities (first page).
     func loadInitialData() async {
+        await loadCommunities(reset: true)
+    }
+
+    /// Triggers loading of more data if the current item is near the end of the list.
+    /// - Parameter item: The currently visible community triggering this check.
+    func loadMoreIfNeeded(near item: Community) async {
+        guard !isLoading, canLoadMorePages else { return }
+
+        let preloadThreshold = 5
+        if let index = communities.firstIndex(of: item),
+           index >= communities.count - preloadThreshold {
+            await loadCommunities(reset: false)
+        }
+    }
+
+    // MARK: - Core Loading Logic
+
+    /// Loads communities from the service, either from the first page or appending more.
+    /// - Parameter reset: Set `true` to reset the list and start from page 1.
+    private func loadCommunities(reset: Bool) async {
         guard !isLoading else { return }
         isLoading = true
 
         do {
-            let response = try await communityService.fetchLocalCommunities(page: currentPage)
-            communities = response.records
-            selectedCommunity = response.records.first
+            if reset {
+                currentPage = 1
+                canLoadMorePages = true
+            }
+
+            let response = try await service.fetchLocalCommunities(page: currentPage)
+
+            if reset {
+                communities = response.records
+                selectedCommunity = response.records.first
+            } else {
+                communities.append(contentsOf: response.records)
+            }
+
             currentPage += 1
-            canLoadMore = response.nextPage != nil
+            canLoadMorePages = (response.nextPage != nil)
+
         } catch {
-            print("Initial load error: \(error.localizedDescription)")
-        }
-
-        isLoading = false
-    }
-
-    /// Loads more data if the current item is near the end of the list.
-    func loadMoreIfNeeded(currentItem: Community) async {
-        guard !isLoading, canLoadMore else { return }
-
-        let thresholdIndex = max(communities.count - 5, 0)
-        if let currentIndex = communities.firstIndex(where: { $0.id == currentItem.id }), currentIndex >= thresholdIndex {
-            await loadMoreData()
-        }
-    }
-
-    /// Loads the next page of community data.
-    private func loadMoreData() async {
-        isLoading = true
-
-        do {
-            let response = try await communityService.fetchLocalCommunities(page: currentPage)
-            communities.append(contentsOf: response.records)
-            currentPage += 1
-            canLoadMore = response.nextPage != nil
-        } catch {
-            print("Load more error: \(error.localizedDescription)")
+            print("❌ Failed to load communities: \(error.localizedDescription)")
         }
 
         isLoading = false
